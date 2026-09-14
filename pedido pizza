@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+	int main()
+	{
+		
+		char sabor;
+		char borda;
+		
+		printf("Escolha o sabor da sua pizza \n");
+		printf("A-4 queijos \n");
+		printf("B-Calabresa \n");
+		printf("C-Mussarela \n");
+		scanf("%c", &sabor);
+		
+		
+		printf("Voce deseja adicionar borda (S/N): ");
+		scanf(" %c", &borda);
+		
+		switch(sabor)
+	{
+		
+	case 'a':
+		
+	case 'A':
+		printf("Voce escolheu 4 queijos \n");
+		break;
+		
+	case 'b':
+	case 'B':
+		printf("Voce escolheu Calabresa \n");
+		break; 
+		
+	case'c':
+	case'C':
+		printf("Voce escolheu mussarela \n ");
+		break;	
+		
+	default:
+		printf("Sabor invalido");
+		break;
+	}	
+	
+	if (borda == 's' || borda == 'S') 
+	{
+		printf("Com borda recheada!\n");
+	}else if (borda == 'n' || borda == 'N')
+	{
+		printf("Sem borda recheada.\n");
+	}else {
+		printf("Opcao de borda invalida.\n");
+	}
+		
+		
+		return 0;
+	}
