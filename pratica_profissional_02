@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    
+    int id_cliente;
+    float renda;
+    float preco_carro;
+    int status;
+    
+    
+    int total_clientes = 0;
+    int aprovados = 0;
+    int em_analise = 0;
+    int reprovados = 0;
+
+    int continuar = 1;
+
+    printf("--- SISTEMA DE CREDITO ---\n");
+
+   
+    while (continuar == 1) {
+        total_clientes++;
+
+        printf("\nCliente #%d\n", total_clientes);
+
+        
+        printf("Digite o ID do cliente: ");
+        scanf("%d", &id_cliente);
+
+        printf("Digite a renda mensal: ");
+        scanf("%f", &renda);
+
+        printf("Digite o preco do carro: ");
+        scanf("%f", &preco_carro);
+
+        
+        printf("\n[Dados do Cadastro]\n");
+        printf("ID: %d | Renda: R$ %.2f | Carro: R$ %.2f\n", id_cliente, renda, preco_carro);
+
+       
+        if (renda >= preco_carro * 0.30f) {
+            status = 1; 
+        } else if (renda >= preco_carro * 0.15f) {
+            status = 2; 
+        } else {
+            status = 3; 
+        }
+
+        
+        printf("Resultado: ");
+        switch (status) {
+            case 1:
+                printf("APROVADO\n");
+                aprovados++;
+                break;
+            case 2:
+                printf("EM ANALISE\n");
+                em_analise++;
+                break;
+            case 3:
+                printf("REPROVADO\n");
+                reprovados++;
+                break;
+            default:
+                printf("Opcao invalida\n");
+                break;
+        }
+
+        
+        printf("\nDeseja cadastrar outro cliente? (1-Sim / 0-Nao): ");
+        scanf("%d", &continuar);
+
+        while (continuar != 1 && continuar != 0) {
+            printf("Digite 1 para Sim ou 0 para Nao: ");
+            scanf("%d", &continuar);
+        }
+    }
+
+    system("cls");
+
+   
+    printf("\n--- RELATORIO FINAL ---\n");
+    printf("Total de clientes: %d\n", total_clientes);
+    printf("Aprovados: %d\n", aprovados);
+    printf("Em analise: %d\n", em_analise);
+    printf("Reprovados: %d\n", reprovados);
+
+    return 0;
+}
