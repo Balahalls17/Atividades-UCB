@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+main() {
+    
+    int dia, cont;
+    
+    for(cont=0; cont<=4; cont++) {
+        printf("digite o dia do seu aniversario: ");
+        scanf("%d", &dia);
+    }
+}
