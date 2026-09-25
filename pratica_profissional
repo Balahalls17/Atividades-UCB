@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    
+    char nomeCliente[50];
+    float rendaMensal;
+    float valorVeiculo;
+    int codigoStatus;
+    
+    int totalAtendimentos = 0;
+    int totalAprovados = 0;
+    int totalEmAnalise = 0;
+    int totalReprovados = 0;
+
+    int continuar = 0;
+
+    printf("===========================================\n");
+    printf("   SISTEMA DE AVALIACAO DE CREDITO AUTOMOTIVO\n");
+    printf("===========================================\n");
+
+  
+    do {
+        totalAtendimentos++;
+
+        printf("\n--- Registro do Cliente #%d ---\n", totalAtendimentos);
+
+        
+        printf("Informe o nome do cliente: ");
+        scanf(" %49[^\n]", nomeCliente);
+
+        printf("Informe a renda mensal (R$): ");
+        scanf("%f", &rendaMensal);
+
+        printf("Informe o valor do veiculo (R$): ");
+        scanf("%f", &valorVeiculo);
+
+        
+        printf("\n[Dados do Cadastro]\n");
+        printf("Cliente: %s\n", nomeCliente);
+        printf("Renda: R$ %.2f\n", rendaMensal);
+        printf("Veiculo: R$ %.2f\n", valorVeiculo);
+
+        
+        if (rendaMensal >= valorVeiculo * 0.30f) {
+            codigoStatus = 1; 
+        } else if (rendaMensal >= valorVeiculo * 0.15f) {
+            codigoStatus = 2; 
+        } else {
+            codigoStatus = 3; 
+        }
+
+    
+        printf("Resultado da Solicitacao: ");
+        switch (codigoStatus) {
+            case 1:
+                printf("APROVADO\n");
+                totalAprovados++;
+                break;
+            case 2:
+                printf("EM ANALISE\n");
+                totalEmAnalise++;
+                break;
+            case 3:
+                printf("REPROVADO\n");
+                totalReprovados++;
+                break;
+            default:
+                printf("STATUS INVALIDO\n");
+                break;
+        }
+
+        
+        printf("\nDeseja analisar outro cliente? (1 - Sim / 0 - Nao): ");
+        scanf("%d", &continuar);
+
+        while (continuar != 1 && continuar != 0) {
+            printf("Opcao invalida! Digite 1 para Sim ou 0 para Nao: ");
+            scanf("%d", &continuar);
+        }
+
+    } while (continuar == 1);
+
+    
+    system("cls");
+
+    
+    printf("\n==================================================\n");
+    printf("               RELATORIO FINAL DE ANALISES        \n");
+    printf("==================================================\n");
+    printf("Total de clientes analisados: %d\n", totalAtendimentos);
+    printf("Clientes Aprovados:           %d\n", totalAprovados);
+    printf("Clientes Em Analise:          %d\n", totalEmAnalise);
+    printf("Clientes Reprovados:          %d\n", totalReprovados);
+    printf("==================================================\n");
+
+    return 0;
+}
