@@ -1,0 +1,44 @@
+#include <stdio.h>  // Biblioteca para printf, scanf, getchar
+#include <stdlib.h> // Biblioteca necessária para system("cls")
+
+int main() { // Define o tipo de retorno int para a função main
+    int codigo;
+    float preco;
+    char letra, produto[20];
+
+    /* Bloco comentado mantido
+    printf("Dig. o codigo do produto: \n");
+    scanf("%d", &codigo);
+
+    printf("Dig. o preco do produto: \n");
+    scanf("%f", &preco);
+
+    printf("Informe a Letra do SETOR: \n");
+    getchar();
+    scanf("%c", &letra);
+
+    printf("Nome do PRODUTO: \n");
+    scanf("%19s", produto);
+
+    system("cls");
+
+    printf("codigo: %d \n", codigo);
+    printf("preco: %.2f \n", preco);
+    printf("letra: %c \n", letra);
+    printf("produto: %s", produto);
+    */
+
+    printf("Informe a senha: \n");
+    scanf("%d", &codigo);
+
+    while (codigo != 123) {
+        printf("Informe a senha: \n");
+        getchar(); // Limpa a quebra de linha do buffer
+        scanf("%d", &codigo);
+    }
+
+    system("cls");
+    printf("Senha correta!\n");
+
+    return 0; // Retorna 0 indicando que o programa finalizou com sucesso
+}
