@@ -1,0 +1,30 @@
+#include <stdio.h>  // Biblioteca padrão para entrada e saída (printf, scanf, getchar)
+#include <stdlib.h> // Biblioteca necessária para a função system("cls")
+
+int main() { // Define o tipo de retorno int para a função main
+    int codigo;
+    float preco;
+    char letra, produto[20];
+
+    printf("Dig. o codigo do produto: \n");
+    scanf("%d", &codigo);
+
+    printf("Dig. o preco do produto: \n");
+    scanf("%f", &preco);
+
+    printf("Informe a letra do SETOR: \n");
+    getchar(); // Limpa o caractere '\n' remanescente no buffer
+    scanf("%c", &letra);
+
+    printf("Nome do PRODUTO: \n");
+    scanf("%19s", produto); // Removido o '&' e limitado a 19 caracteres para segurança
+
+    system("cls"); // Limpa a tela no Windows
+
+    printf("codigo: %d \n", codigo);
+    printf("preco: %.2f \n", preco);
+    printf("letra: %c \n", letra);
+    printf("produto: %s \n", produto);
+
+    return 0; // Retorna 0 para indicar execução bem-sucedida
+}
