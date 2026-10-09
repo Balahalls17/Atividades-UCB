@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char nome[100];
+	
+	printf("Dig. o nome do(a) candidato(a): ");
+	fgets(nome, 100, stdin); //fgets é usado para leitura de textos ou frases com mais de 1 palavra, e o "stdin" é usado para explicar que esta usando o teclado
+	nome[strcspn (nome, "\n")] = '\o';
+		
+	printf("Candidato(a): %s \n", nome);
+	printf("Candidato(a): %s \n", nome);
+	
+	return 0;
+}
